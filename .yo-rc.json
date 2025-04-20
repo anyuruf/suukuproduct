@@ -1,0 +1,23 @@
+{
+  "generator-jhipster": {
+    "applicationIndex": 1,
+    "applicationType": "microservice",
+    "authenticationType": "oauth2",
+    "baseName": "suuku_product",
+    "buildTool": "maven",
+    "cacheProvider": "infinispan",
+    "entities": ["Product", "ProductCategory", "ProductOrder", "OrderItem"],
+    "jhipsterVersion": "8.10.0",
+    "jwtSecretKey": "NjEzMjUzM2E0ODMwZWM1MGUzMDVjZWNiOTAxZmE3NzBjN2IzNWQxNjU5MjhmMmFmNTQzOTYyZmQ2NGIzMzgxZTkxMDk4YjE2YTg0NzhhOWVkMWNiYjVhZTM5NjUwYWU4YzcxZGE5Y2NmMzliMDVmN2E3MTFhMzY2YjNiZDY0ZjY=",
+    "languages": ["en"],
+    "lastLiquibaseTimestamp": 1745144027000,
+    "nativeLanguage": "en",
+    "packageName": "net.suuku.product",
+    "prodDatabaseType": "postgresql",
+    "reactive": true,
+    "serverPort": "8081",
+    "serviceDiscoveryType": "no",
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
