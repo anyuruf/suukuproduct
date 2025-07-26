@@ -122,9 +122,4 @@ class OrderItemRepositoryInternalImpl extends SimpleR2dbcRepository<OrderItem, L
         entity.setOrder(productorderMapper.apply(row, "order"));
         return entity;
     }
-
-    @Override
-    public <S extends OrderItem> Mono<S> save(S entity) {
-        return super.save(entity);
-    }
 }

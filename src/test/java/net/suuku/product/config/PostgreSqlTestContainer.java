@@ -20,10 +20,11 @@ public class PostgreSqlTestContainer implements SqlTestContainer {
         }
     }
 
+    @SuppressWarnings("resource")
     @Override
     public void afterPropertiesSet() {
         if (null == postgreSQLContainer) {
-            postgreSQLContainer = new PostgreSQLContainer<>("postgres:17.4")
+            postgreSQLContainer = new PostgreSQLContainer<>("postgres:17.2-minimal-bookworm")
                 .withDatabaseName("suuku_product")
                 .withTmpFs(Collections.singletonMap("/testtmpfs", "rw"))
                 .withLogConsumer(new Slf4jLogConsumer(LOG))
