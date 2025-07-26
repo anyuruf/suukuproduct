@@ -15,7 +15,7 @@
 
 spring:
   application:
-    name: suuku_product
+    name: suuku-product
   # Replace by 'prod, faker' to add the faker context and have sample data loaded in production
   liquibase:
     contexts: test
@@ -23,7 +23,7 @@ spring:
     serialization:
       write-durations-as-timestamps: false
   mail:
-    host: localhost
+    host: product.suuku.net
   main:
     allow-bean-definition-overriding: true
   messages:
@@ -33,7 +33,7 @@ spring:
       client:
         provider:
           oidc:
-            issuer-uri: http://DO_NOT_CALL:9080/realms/jhipster
+            issuer-uri: http://suuku-keycloak:9080/suuku/suuku-product
       resourceserver:
         jwt:
           principal-claim-name: preferred_username
@@ -62,18 +62,19 @@ server:
 # ===================================================================
 jhipster:
   clientApp:
-    name: 'suukuProductApp'
+    name: 'suuku Product'
   mail:
-    from: suuku_product@localhost.com
+    from: suuku_product@product.suuku.net
     base-url: http://127.0.0.1:8080
-  logging:
-    # To test json console appender
-    use-json-format: false
-    logstash:
-      enabled: false
-      host: localhost
-      port: 5000
-      ring-buffer-size: 512
+#  logging:
+
+#To test json console appender
+#    use-json-format: false
+#    logstash:
+#      enabled: false
+#      host: localhost
+#      port: 5000
+#      ring-buffer-size: 512
 
 # ===================================================================
 # Application specific properties

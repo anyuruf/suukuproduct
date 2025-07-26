@@ -11,7 +11,6 @@ import reactor.core.publisher.Mono;
 /**
  * Spring Data R2DBC repository for the OrderItem entity.
  */
-@SuppressWarnings("unused")
 @Repository
 public interface OrderItemRepository extends ReactiveCrudRepository<OrderItem, Long>, OrderItemRepositoryInternal {
     Flux<OrderItem> findAllBy(Pageable pageable);

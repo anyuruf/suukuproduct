@@ -39,6 +39,7 @@ class ProductCategoryRepositoryInternalImpl
 
     private static final Table entityTable = Table.aliased("product_category", EntityManager.ENTITY_ALIAS);
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public ProductCategoryRepositoryInternalImpl(
         R2dbcEntityTemplate template,
         EntityManager entityManager,

@@ -15,7 +15,6 @@ import org.springframework.data.relational.core.mapping.Table;
  */
 @Schema(description = "Entities for product microservice")
 @Table("product")
-@SuppressWarnings("common-java:DuplicatedBlocks")
 public class Product implements Serializable {
 
     private static final long serialVersionUID = 1L;

@@ -13,7 +13,6 @@ import org.springframework.data.relational.core.mapping.Table;
  * A ProductCategory.
  */
 @Table("product_category")
-@SuppressWarnings("common-java:DuplicatedBlocks")
 public class ProductCategory implements Serializable {
 
     private static final long serialVersionUID = 1L;

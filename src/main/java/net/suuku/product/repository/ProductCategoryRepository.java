@@ -10,7 +10,6 @@ import reactor.core.publisher.Mono;
 /**
  * Spring Data R2DBC repository for the ProductCategory entity.
  */
-@SuppressWarnings("unused")
 @Repository
 public interface ProductCategoryRepository extends ReactiveCrudRepository<ProductCategory, Long>, ProductCategoryRepositoryInternal {
     @Override

@@ -44,6 +44,7 @@ class OrderItemRepositoryInternalImpl extends SimpleR2dbcRepository<OrderItem, L
     private static final Table productTable = Table.aliased("product", "product");
     private static final Table orderTable = Table.aliased("product_order", "e_order");
 
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     public OrderItemRepositoryInternalImpl(
         R2dbcEntityTemplate template,
         EntityManager entityManager,

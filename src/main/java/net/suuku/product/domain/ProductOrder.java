@@ -15,7 +15,6 @@ import org.springframework.data.relational.core.mapping.Table;
  * A ProductOrder.
  */
 @Table("product_order")
-@SuppressWarnings("common-java:DuplicatedBlocks")
 public class ProductOrder implements Serializable {
 
     private static final long serialVersionUID = 1L;
