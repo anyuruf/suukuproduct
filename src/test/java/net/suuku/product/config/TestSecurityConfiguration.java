@@ -33,7 +33,7 @@ public class TestSecurityConfiguration {
 
     private ClientRegistration.Builder clientRegistrationBuilder() {
         Map<String, Object> metadata = new HashMap<>();
-        metadata.put("end_session_endpoint", "https://jhipster.org/logout");
+        metadata.put("end_session_endpoint", "https://suuku.net/logout");
 
         return ClientRegistration.withRegistrationId("oidc")
             .issuerUri("{baseUrl}")
@@ -41,10 +41,10 @@ public class TestSecurityConfiguration {
             .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
             .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
             .scope("read:user")
-            .authorizationUri("https://jhipster.org/login/oauth/authorize")
-            .tokenUri("https://jhipster.org/login/oauth/access_token")
-            .jwkSetUri("https://jhipster.org/oauth/jwk")
-            .userInfoUri("https://api.jhipster.org/user")
+            .authorizationUri("https://keycloak.anyuruf.net/login/oauth/authorize")
+            .tokenUri("https://keycloak.anyuruf.net/login/oauth/access_token")
+            .jwkSetUri("https://keycloack.anyuruf.net/oauth/jwk")
+            .userInfoUri("https://api.keycloak.anyuruf.net/user")
             .providerConfigurationMetadata(metadata)
             .userNameAttributeName("id")
             .clientName("Client Name")
