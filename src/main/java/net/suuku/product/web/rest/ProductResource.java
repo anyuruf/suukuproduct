@@ -87,10 +87,8 @@ public class ProductResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PutMapping("/{id}")
-    public Mono<ResponseEntity<Product>> updateProduct(
-        @PathVariable(value = "id", required = false) final Long id,
-        @Valid @RequestBody Product product
-    ) throws URISyntaxException {
+    public Mono<ResponseEntity<Product>> updateProduct(@PathVariable(required = false) final Long id, @Valid @RequestBody Product product)
+        throws URISyntaxException {
         LOG.debug("REST request to update Product : {}, {}", id, product);
         if (product.getId() == null) {
             throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
@@ -130,7 +128,7 @@ public class ProductResource {
      */
     @PatchMapping(value = "/{id}", consumes = { "application/json", "application/merge-patch+json" })
     public Mono<ResponseEntity<Product>> partialUpdateProduct(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(required = false) final Long id,
         @NotNull @RequestBody Product product
     ) throws URISyntaxException {
         LOG.debug("REST request to partial update Product partially : {}, {}", id, product);
@@ -172,7 +170,7 @@ public class ProductResource {
     public Mono<ResponseEntity<List<Product>>> getAllProducts(
         @org.springdoc.core.annotations.ParameterObject Pageable pageable,
         ServerHttpRequest request,
-        @RequestParam(name = "eagerload", required = false, defaultValue = "true") boolean eagerload
+        @RequestParam(required = false, defaultValue = "true") boolean eagerload
     ) {
         LOG.debug("REST request to get a page of Products");
         return productService
@@ -197,7 +195,7 @@ public class ProductResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the product, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/{id}")
-    public Mono<ResponseEntity<Product>> getProduct(@PathVariable("id") Long id) {
+    public Mono<ResponseEntity<Product>> getProduct(@PathVariable Long id) {
         LOG.debug("REST request to get Product : {}", id);
         Mono<Product> product = productService.findOne(id);
         return ResponseUtil.wrapOrNotFound(product);
@@ -210,7 +208,7 @@ public class ProductResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/{id}")
-    public Mono<ResponseEntity<Void>> deleteProduct(@PathVariable("id") Long id) {
+    public Mono<ResponseEntity<Void>> deleteProduct(@PathVariable Long id) {
         LOG.debug("REST request to delete Product : {}", id);
         return productService
             .delete(id)

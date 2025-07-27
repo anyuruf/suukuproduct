@@ -88,7 +88,7 @@ public class ProductOrderResource {
      */
     @PutMapping("/{id}")
     public Mono<ResponseEntity<ProductOrder>> updateProductOrder(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(required = false) final Long id,
         @Valid @RequestBody ProductOrder productOrder
     ) throws URISyntaxException {
         LOG.debug("REST request to update ProductOrder : {}, {}", id, productOrder);
@@ -130,7 +130,7 @@ public class ProductOrderResource {
      */
     @PatchMapping(value = "/{id}", consumes = { "application/json", "application/merge-patch+json" })
     public Mono<ResponseEntity<ProductOrder>> partialUpdateProductOrder(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(required = false) final Long id,
         @NotNull @RequestBody ProductOrder productOrder
     ) throws URISyntaxException {
         LOG.debug("REST request to partial update ProductOrder partially : {}, {}", id, productOrder);
@@ -195,7 +195,7 @@ public class ProductOrderResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the productOrder, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/{id}")
-    public Mono<ResponseEntity<ProductOrder>> getProductOrder(@PathVariable("id") Long id) {
+    public Mono<ResponseEntity<ProductOrder>> getProductOrder(@PathVariable Long id) {
         LOG.debug("REST request to get ProductOrder : {}", id);
         Mono<ProductOrder> productOrder = productOrderService.findOne(id);
         return ResponseUtil.wrapOrNotFound(productOrder);
@@ -208,7 +208,7 @@ public class ProductOrderResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/{id}")
-    public Mono<ResponseEntity<Void>> deleteProductOrder(@PathVariable("id") Long id) {
+    public Mono<ResponseEntity<Void>> deleteProductOrder(@PathVariable Long id) {
         LOG.debug("REST request to delete ProductOrder : {}", id);
         return productOrderService
             .delete(id)

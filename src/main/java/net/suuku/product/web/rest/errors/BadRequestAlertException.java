@@ -1,5 +1,6 @@
 package net.suuku.product.web.rest.errors;
 
+import java.io.Serial;
 import java.net.URI;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.ErrorResponseException;
@@ -8,6 +9,7 @@ import tech.jhipster.web.rest.errors.ProblemDetailWithCause.ProblemDetailWithCau
 
 public class BadRequestAlertException extends ErrorResponseException {
 
+    @Serial
     private static final long serialVersionUID = 1L;
 
     private final String entityName;

@@ -2,6 +2,7 @@ package net.suuku.product.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.validation.constraints.*;
+import java.io.Serial;
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.HashSet;
@@ -17,6 +18,7 @@ import org.springframework.data.relational.core.mapping.Table;
 @Table("product_order")
 public class ProductOrder implements Serializable {
 
+    @Serial
     private static final long serialVersionUID = 1L;
 
     @Id

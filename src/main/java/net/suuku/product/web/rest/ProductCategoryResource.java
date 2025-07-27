@@ -85,7 +85,7 @@ public class ProductCategoryResource {
      */
     @PutMapping("/{id}")
     public Mono<ResponseEntity<ProductCategory>> updateProductCategory(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(required = false) final Long id,
         @Valid @RequestBody ProductCategory productCategory
     ) throws URISyntaxException {
         LOG.debug("REST request to update ProductCategory : {}, {}", id, productCategory);
@@ -127,7 +127,7 @@ public class ProductCategoryResource {
      */
     @PatchMapping(value = "/{id}", consumes = { "application/json", "application/merge-patch+json" })
     public Mono<ResponseEntity<ProductCategory>> partialUpdateProductCategory(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(required = false) final Long id,
         @NotNull @RequestBody ProductCategory productCategory
     ) throws URISyntaxException {
         LOG.debug("REST request to partial update ProductCategory partially : {}, {}", id, productCategory);
@@ -185,7 +185,7 @@ public class ProductCategoryResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the productCategory, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/{id}")
-    public Mono<ResponseEntity<ProductCategory>> getProductCategory(@PathVariable("id") Long id) {
+    public Mono<ResponseEntity<ProductCategory>> getProductCategory(@PathVariable Long id) {
         LOG.debug("REST request to get ProductCategory : {}", id);
         Mono<ProductCategory> productCategory = productCategoryService.findOne(id);
         return ResponseUtil.wrapOrNotFound(productCategory);
@@ -198,7 +198,7 @@ public class ProductCategoryResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/{id}")
-    public Mono<ResponseEntity<Void>> deleteProductCategory(@PathVariable("id") Long id) {
+    public Mono<ResponseEntity<Void>> deleteProductCategory(@PathVariable Long id) {
         LOG.debug("REST request to delete ProductCategory : {}", id);
         return productCategoryService
             .delete(id)

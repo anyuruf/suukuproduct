@@ -2,6 +2,7 @@ package net.suuku.product.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.validation.constraints.*;
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -15,6 +16,7 @@ import org.springframework.data.relational.core.mapping.Table;
 @Table("product_category")
 public class ProductCategory implements Serializable {
 
+    @Serial
     private static final long serialVersionUID = 1L;
 
     @Id

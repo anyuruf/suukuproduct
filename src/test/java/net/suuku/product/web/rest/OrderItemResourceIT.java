@@ -277,7 +277,6 @@ class OrderItemResourceIT {
             .value(hasItem(DEFAULT_STATUS.toString()));
     }
 
-    @SuppressWarnings({ "unchecked" })
     void getAllOrderItemsWithEagerRelationshipsIsEnabled() {
         when(orderItemServiceMock.findAllWithEagerRelationships(any())).thenReturn(Flux.empty());
 
@@ -286,7 +285,6 @@ class OrderItemResourceIT {
         verify(orderItemServiceMock, times(1)).findAllWithEagerRelationships(any());
     }
 
-    @SuppressWarnings({ "unchecked" })
     void getAllOrderItemsWithEagerRelationshipsIsNotEnabled() {
         when(orderItemServiceMock.findAllWithEagerRelationships(any())).thenReturn(Flux.empty());
 

@@ -88,7 +88,7 @@ public class OrderItemResource {
      */
     @PutMapping("/{id}")
     public Mono<ResponseEntity<OrderItem>> updateOrderItem(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(required = false) final Long id,
         @Valid @RequestBody OrderItem orderItem
     ) throws URISyntaxException {
         LOG.debug("REST request to update OrderItem : {}, {}", id, orderItem);
@@ -130,7 +130,7 @@ public class OrderItemResource {
      */
     @PatchMapping(value = "/{id}", consumes = { "application/json", "application/merge-patch+json" })
     public Mono<ResponseEntity<OrderItem>> partialUpdateOrderItem(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(required = false) final Long id,
         @NotNull @RequestBody OrderItem orderItem
     ) throws URISyntaxException {
         LOG.debug("REST request to partial update OrderItem partially : {}, {}", id, orderItem);
@@ -172,7 +172,7 @@ public class OrderItemResource {
     public Mono<ResponseEntity<List<OrderItem>>> getAllOrderItems(
         @org.springdoc.core.annotations.ParameterObject Pageable pageable,
         ServerHttpRequest request,
-        @RequestParam(name = "eagerload", required = false, defaultValue = "true") boolean eagerload
+        @RequestParam(required = false, defaultValue = "true") boolean eagerload
     ) {
         LOG.debug("REST request to get a page of OrderItems");
         return orderItemService
@@ -197,7 +197,7 @@ public class OrderItemResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the orderItem, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/{id}")
-    public Mono<ResponseEntity<OrderItem>> getOrderItem(@PathVariable("id") Long id) {
+    public Mono<ResponseEntity<OrderItem>> getOrderItem(@PathVariable Long id) {
         LOG.debug("REST request to get OrderItem : {}", id);
         Mono<OrderItem> orderItem = orderItemService.findOne(id);
         return ResponseUtil.wrapOrNotFound(orderItem);
@@ -210,7 +210,7 @@ public class OrderItemResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/{id}")
-    public Mono<ResponseEntity<Void>> deleteOrderItem(@PathVariable("id") Long id) {
+    public Mono<ResponseEntity<Void>> deleteOrderItem(@PathVariable Long id) {
         LOG.debug("REST request to delete OrderItem : {}", id);
         return orderItemService
             .delete(id)
