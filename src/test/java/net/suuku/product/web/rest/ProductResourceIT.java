@@ -282,7 +282,6 @@ class ProductResourceIT {
             .value(hasItem(Base64.getEncoder().encodeToString(DEFAULT_IMAGE)));
     }
 
-    @SuppressWarnings({ "unchecked" })
     void getAllProductsWithEagerRelationshipsIsEnabled() {
         when(productServiceMock.findAllWithEagerRelationships(any())).thenReturn(Flux.empty());
 
@@ -291,7 +290,6 @@ class ProductResourceIT {
         verify(productServiceMock, times(1)).findAllWithEagerRelationships(any());
     }
 
-    @SuppressWarnings({ "unchecked" })
     void getAllProductsWithEagerRelationshipsIsNotEnabled() {
         when(productServiceMock.findAllWithEagerRelationships(any())).thenReturn(Flux.empty());
 
