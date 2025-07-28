@@ -25,15 +25,10 @@ management:
   tracing.sampling.probability: 1.0 # report 100% of traces
 
 spring:
-  devtools:
-    restart.enabled: false
-    livereload.enabled: false
   # Replace by 'prod, faker' to add the faker context and have sample data loaded in production
   liquibase:
     contexts: prod
     url: jdbc:postgresql://localhost:5432/suuku_product
-    username: ${spring.datasource.username}
-    password: ${spring.datasource.password}
   r2dbc:
     url: r2dbc:postgresql://localhost:5432/suuku_product
     username: suuku_product
