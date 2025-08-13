@@ -10,8 +10,13 @@
         Added the entity Product.
     -->
     <changeSet id="20250420101047-1" author="jhipster">
+    	<preConditions onFail="MARK_RAN">
+	        <not>
+	            <tableExists tableName="product"/>
+	        </not>
+	    </preConditions>
         <createTable tableName="product" remarks="Entities for product microservice">
-            <column name="id" type="bigint" autoIncrement="true" startWith="1500">
+            <column name="id" type="bigint" autoIncrement="true" startWith="1535">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="name" type="varchar(255)">

@@ -37,7 +37,7 @@ import reactor.core.publisher.Flux;
  * Integration tests for the {@link ProductResource} REST controller.
  */
 @IntegrationTest
-@ExtendWith(MockitoExtension.class)
+// @ExtendWith(MockitoExtension.class)
 @AutoConfigureWebTestClient(timeout = IntegrationTest.DEFAULT_ENTITY_TIMEOUT)
 @WithMockUser
 class ProductResourceIT {

@@ -15,9 +15,9 @@
 
 logging.level:
   ROOT: DEBUG
-  tech.jhipster: DEBUG
-  org.hibernate.SQL: DEBUG
-  net.suuku.product: DEBUG
+  '[tech.jhipster]': DEBUG
+  '[org.hibernate.SQL]': DEBUG
+  '[net.suuku.product]': DEBUG
 
 management:
   zipkin: # Use the "zipkin" Maven profile to have the Spring Cloud Zipkin dependencies
@@ -34,12 +34,12 @@ spring:
   liquibase:
     # Remove 'faker' if you do not want the sample data to be loaded automatically
     contexts: dev, faker
-    url: jdbc:postgresql://localhost:5432/suuku_product
+    url: jdbc:postgresql://localhost:5432/app
   messages.cache-duration: PT1S # 1 second, see the ISO 8601 standard
   r2dbc:
-    url: r2dbc:postgresql://localhost:5432/suuku_product
-    username: suuku_product
-    password:
+    url: r2dbc:postgresql://localhost:5432/app
+    username: app
+    password: ${SUUKU_ANYURUF_POSTGRESDB_PASSWORD}
   thymeleaf.cache: false
 
 server:
