@@ -131,7 +131,7 @@ spring:
         registration:
           oidc:
             client-id: suuku-product-app
-            client-secret: ${SUUKU_PRODCT_APP_CLIENT_SECRET}
+            client-secret: ${SUUKU_PRODUCT_APP_CLIENT_SECRET}
             scope: openid, profile, email, offline_access # last one for refresh tokens
   task:
     execution:
