@@ -1,11 +1,11 @@
 id;placed_date;status;code;invoice_id;customer
-1;2025-04-19T12:21:47;PENDING;subsidy;10940;before
-2;2025-04-19T12:52:17;PENDING;overconfidently toaster lest;22893;pfft where
-3;2025-04-20T08:04:26;COMPLETED;at though;16693;kindheartedly
-4;2025-04-19T10:13:15;CANCELLED;owlishly pronoun march;1560;aw but uniform
-5;2025-04-19T21:42:52;PENDING;for;6888;quaintly mainstream vestment
-6;2025-04-19T22:20:28;COMPLETED;dime service;11416;though yawningly platypus
-7;2025-04-20T01:25:03;PENDING;bah pluck biodegrade;20462;intensely as
-8;2025-04-20T08:00:02;CANCELLED;except;5486;psst likewise card
-9;2025-04-20T03:46:43;PENDING;oily;12535;carouse hmph unless
-10;2025-04-20T05:20:57;CANCELLED;psst;8592;seal through accentuate
+1;2025-04-19T12:21:47Z;PENDING;subsidy;10940;before
+2;2025-04-19T12:52:17Z;PENDING;overconfidently toaster lest;22893;pfft where
+3;2025-04-20T08:04:26Z;COMPLETED;at though;16693;kindheartedly
+4;2025-04-19T10:13:15Z;CANCELLED;owlishly pronoun march;1560;aw but uniform
+5;2025-04-19T21:42:52Z;PENDING;for;6888;quaintly mainstream vestment
+6;2025-04-19T22:20:28Z;COMPLETED;dime service;11416;though yawningly platypus
+7;2025-04-20T01:25:03Z;PENDING;bah pluck biodegrade;20462;intensely as
+8;2025-04-20T08:00:02Z;CANCELLED;except;5486;psst likewise card
+9;2025-04-20T03:46:43Z;PENDING;oily;12535;carouse hmph unless
+10;2025-04-20T05:20:57Z;CANCELLED;psst;8592;seal through accentuate

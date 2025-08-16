@@ -10,7 +10,6 @@ import reactor.core.publisher.Mono;
 /**
  * Spring Data R2DBC repository for the ProductOrder entity.
  */
-@SuppressWarnings("unused")
 @Repository
 public interface ProductOrderRepository extends ReactiveCrudRepository<ProductOrder, Long>, ProductOrderRepositoryInternal {
     Flux<ProductOrder> findAllBy(Pageable pageable);
