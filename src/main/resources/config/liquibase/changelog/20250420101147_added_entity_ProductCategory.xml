@@ -10,8 +10,8 @@
         Added the entity ProductCategory.
     -->
     <changeSet id="20250420101147-1" author="jhipster">
-        <createTable tableName="product_category">
-            <column name="id" type="bigint" autoIncrement="true" startWith="1500">
+        <createTable tableName="product_category" schemaName="suuku_domain" >
+            <column name="id" type="bigint" autoIncrement="true" startWith="1535">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="name" type="varchar(255)">

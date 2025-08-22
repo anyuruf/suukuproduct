@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE xml>
 <databaseChangeLog
     xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
     xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
@@ -16,6 +15,8 @@
                                  constraintName="fk_order_item__product_id"
                                  referencedColumnNames="id"
                                  referencedTableName="product"
+                                 baseTableSchemaName="suuku_domain"
+                                 referencedTableSchemaName="suuku_domain"
                                  />
 
         <addForeignKeyConstraint baseColumnNames="order_id"
@@ -23,6 +24,8 @@
                                  constraintName="fk_order_item__order_id"
                                  referencedColumnNames="id"
                                  referencedTableName="product_order"
+                                 baseTableSchemaName="suuku_domain"
+                                 referencedTableSchemaName="suuku_domain"
                                  />
     </changeSet>
 </databaseChangeLog>

@@ -11,7 +11,7 @@
         Added the entity OrderItem.
     -->
     <changeSet id="20250420101347-1" author="jhipster">
-        <createTable tableName="order_item">
+        <createTable tableName="order_item" schemaName="suuku_domain">
             <column name="id" type="bigint" autoIncrement="true" startWith="1535">
                 <constraints primaryKey="true" nullable="false"/>
             </column>

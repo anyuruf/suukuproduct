@@ -28,11 +28,11 @@ spring:
   # Replace by 'prod, faker' to add the faker context and have sample data loaded in production
   liquibase:
     contexts: prod
-    url: ${SUUKU_ANYURUF_POSTGRESDB_JDBC_URL}
+    url: ${SUUKU_POSTGRESDB_JDBC_URL}
   r2dbc:
-    url: ${SUUKU_ANYURUF_POSTGRESDB_R2DBC_URL}
-    username: ${SUUKU_ANYURUF_POSTGRESDB_USERNAME}
-    password: ${SUUKU_ANYURUF_POSTGRESDB_PASSWORD}
+    url: ${SUUKU_POSTGRESDB_R2DBC_URL}
+    username: ${SUUKU_POSTGRESDB_USERNAME}
+    password: ${SUUKU_POSTGRESDB_PASSWORD}
   thymeleaf.cache: true
 
 # ===================================================================

@@ -25,21 +25,17 @@ management:
   tracing.sampling.probability: 1.0 # report 100% of traces
 
 spring:
-  devtools:
-    restart:
-      enabled: true
-      additional-exclude: static/**
-    livereload.enabled: false # we use Webpack dev server + BrowserSync for livereload
-  jackson.serialization.indent-output: true
   liquibase:
     # Remove 'faker' if you do not want the sample data to be loaded automatically
     contexts: dev, faker
-    url: jdbc:postgresql://localhost:5432/app
+    url: ${SUUKU_POSTGRESDB_JDBC_URL}
   messages.cache-duration: PT1S # 1 second, see the ISO 8601 standard
   r2dbc:
-    url: r2dbc:postgresql://localhost:5432/app
-    username: app
-    password: ${SUUKU_ANYURUF_POSTGRESDB_PASSWORD}
+    url: ${SUUKU_POSTGRESDB_R2DBC_URL}
+    username: ${SUUKU_POSTGRESDB_USERNAME}
+    password: ${SUUKU_POSTGRESDB_PASSWORD}
+    properties:
+      schema: suuku_domain
   thymeleaf.cache: false
 
 server:

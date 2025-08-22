@@ -127,11 +127,11 @@ spring:
       client:
         provider:
           oidc:
-            issuer-uri: http://localhost:9080/realms/suuku-realm
+            issuer-uri: ${SUUKU_KEYCLOAK_ISSUER_URI}
         registration:
           oidc:
-            client-id: suuku-product-app
-            client-secret: ${SUUKU_PRODUCT_APP_CLIENT_SECRET}
+            client-id: ${SUUKU_KEYCLOAK_APP_CLIENT}
+            client-secret: ${SUUKU_KEYCLOAK_APP_CLIENT_SECRET}
             scope: openid, profile, email, offline_access # last one for refresh tokens
   task:
     execution:

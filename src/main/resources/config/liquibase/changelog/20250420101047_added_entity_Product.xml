@@ -15,7 +15,7 @@
 	            <tableExists tableName="product"/>
 	        </not>
 	    </preConditions>
-        <createTable tableName="product" remarks="Entities for product microservice">
+        <createTable tableName="product" schemaName="suuku_domain" remarks="Entities for product microservice">
             <column name="id" type="bigint" autoIncrement="true" startWith="1535">
                 <constraints primaryKey="true" nullable="false"/>
             </column>

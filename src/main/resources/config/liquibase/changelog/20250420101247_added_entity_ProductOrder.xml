@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE xml>
 <databaseChangeLog
     xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
     xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
@@ -11,7 +10,7 @@
         Added the entity ProductOrder.
     -->
     <changeSet id="20250420101247-1" author="jhipster">
-        <createTable tableName="product_order">
+        <createTable tableName="product_order" schemaName="suuku_domain">
             <column name="id" type="bigint" autoIncrement="true" startWith="1535">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
