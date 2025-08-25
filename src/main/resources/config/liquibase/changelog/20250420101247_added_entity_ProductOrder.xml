@@ -14,7 +14,7 @@
             <column name="id" type="bigint" autoIncrement="true" startWith="1535">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="placed_date" type="timestamptz">
+            <column name="placed_date" type="${dateTimeType}">
                 <constraints nullable="false" />
             </column>
             <column name="status" type="varchar(255)">
@@ -48,10 +48,9 @@
         <loadData
                   file="config/liquibase/fake-data/product_order.csv"
                   separator=";"
-                  tableName="product_order"
-                  usePreparedStatements="true">
+                  tableName="product_order">
             <column name="id" type="numeric"/>
-            <column name="placed_date" type="datetime"/>
+            <column name="placed_date" type="timestamptz"/>
             <column name="status" type="string"/>
             <column name="code" type="string"/>
             <column name="invoice_id" type="numeric"/>
