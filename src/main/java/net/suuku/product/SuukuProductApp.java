@@ -6,8 +6,6 @@ import java.net.UnknownHostException;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Optional;
-import net.suuku.product.config.ApplicationProperties;
-import net.suuku.product.config.CRLFLogConverter;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
